@@ -116,7 +116,7 @@ namespace SampleApp
 
             MorePlayers.Clicked += delegate
             {
-                //need to figure out what goes here
+                this.Navigation.PushAsync(new TwoPlayerPage());
             };
 
             GridForButtons.Children.Add(UpButton, 0, 0);
