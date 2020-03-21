@@ -4,8 +4,12 @@ using System.Text;
 
 namespace SampleApp.Models
 {
-    public class Stats
+    public class Player
     {
+
         public int LifeTotal { get; set; }
+
+        public string Name { get; set; }
+
     }
 }

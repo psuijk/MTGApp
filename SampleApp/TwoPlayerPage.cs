@@ -14,13 +14,17 @@ namespace SampleApp
 
             base.OnAppearing();
 
-            Stats Player1 = new Stats();
+            Player Player1 = new Player();
+
+         
 
             Player1.LifeTotal = 20;
 
-            Stats Player2 = new Stats();
+            Player Player2 = new Player();
 
             Player2.LifeTotal = 20;
+
+            NavigationPage.SetHasNavigationBar(this, false);
 
 
             var MainGrid = new Grid()

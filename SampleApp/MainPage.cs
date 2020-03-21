@@ -15,11 +15,13 @@ namespace SampleApp
         public MainPage()
         {
             CreateUI();
+
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         private void CreateUI()
         {
-            Stats Player1 = new Stats();
+            Player Player1 = new Player();
 
             Player1.LifeTotal = 20;
 
