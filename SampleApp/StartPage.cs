@@ -41,7 +41,7 @@ namespace SampleApp
 
             OnePlayerButton.Clicked += delegate
             {
-                this.Navigation.PushAsync(new OnePlayerPage());
+                this.Navigation.PushAsync(new Views.OnePlayerPage());
             };
 
 
@@ -56,7 +56,7 @@ namespace SampleApp
 
             TwoPlayerButton.Clicked += delegate
             {
-                this.Navigation.PushAsync(new NameEntryPage());
+                this.Navigation.PushAsync(new Views.NameEntryPage());
             };
 
             var TestPageButton = new Button()

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SampleApp.Views.NameEntryPage">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <!--<Label Text="Player 1 Name" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Medium"/>-->
+            <Editor Placeholder="Enter Name for Player 1"
+                Text="{Binding Text}"
+                HeightRequest="100" />
+            <!--<Label Text="Player 2 Name" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Medium"/>-->
+            <Editor Placeholder="Enter Name for Player 2"
+                Text="{Binding Text}"
+                HeightRequest="100" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" 
+                    Text="Start"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

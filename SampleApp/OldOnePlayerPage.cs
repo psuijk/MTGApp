@@ -9,10 +9,10 @@ namespace SampleApp
     //contentpage is the base class for all pages.
     //You should make a base class for this page that isn't contentpage, but inherits from content page, then you can add custom methods that extend across all pages.
     //Like adding a progress spinner, or disabling all UI elements.
-    public class OnePlayerPage : ContentPage
+    public class OldOnePlayerPage : ContentPage
     {
 
-        public OnePlayerPage(string name)
+        public OldOnePlayerPage(string name)
         {
 
             CreateUI(name);
@@ -20,7 +20,7 @@ namespace SampleApp
             NavigationPage.SetHasNavigationBar(this, false);
         }
 
-        public OnePlayerPage()
+        public OldOnePlayerPage()
         {
 
             CreateUI();

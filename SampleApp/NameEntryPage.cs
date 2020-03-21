@@ -98,7 +98,7 @@ namespace SampleApp
             };
 
             Start.Clicked += delegate {
-                this.Navigation.PushAsync(new TwoPlayerPage(name1, name2));
+                this.Navigation.PushAsync(new Views.TwoPlayerPage());
 
             };
 
