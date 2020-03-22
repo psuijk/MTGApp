@@ -4,12 +4,14 @@ using System.Text;
 using Xamarin.Forms;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using SampleApp.Models;
 
 
 namespace SampleApp
 {
     class TestPageViewModel : INotifyPropertyChanged
     {
+        Player Player1 = new Player();
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
@@ -22,6 +24,7 @@ namespace SampleApp
 
         public Command IncrementValCommand { get; set; }
 
+        /*
         private int val;
 
         public int Val { 
@@ -38,16 +41,16 @@ namespace SampleApp
                 }
             }
         }
-
+        */
         public TestPageViewModel()
         {
-            val = 0;
+            Player1.LifeTotal = 0;
             IncrementValCommand = new Command(() => IncrementVal());
         }
 
         private void IncrementVal()
         {
-            Val++;
+            Player1.LifeTotal++;
         }
     }
 }

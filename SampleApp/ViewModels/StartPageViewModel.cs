@@ -4,11 +4,17 @@ using System.Text;
 using Xamarin.Forms;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using SampleApp.Models;
 
 namespace SampleApp.ViewModels
 {
+    
+
+
     public class StartPageViewModel : INotifyPropertyChanged
     {
+        
+
         public INavigation Navigation { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;

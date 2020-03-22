@@ -10,6 +10,10 @@ namespace SampleApp.ViewModels
 {
     class TwoPlayerPageViewModel : INotifyPropertyChanged
     {
+        Player Player1 = new Player();
+        Player Player2 = new Player();
+
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
@@ -25,44 +29,11 @@ namespace SampleApp.ViewModels
         public Command IncrementP2ValCommand { get; set; }
         public Command DecrementP2ValCommand { get; set; }
 
-        private int val;
-
-        public int Val
-        {
-            get
-            {
-                return val;
-            }
-            set
-            {
-                if (val != value)
-                {
-                    val = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Val"));
-                }
-            }
-        }
-        private int valP2;
-
-        public int ValP2
-        {
-            get
-            {
-                return valP2;
-            }
-            set
-            {
-                if (valP2 != value)
-                {
-                    valP2 = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ValP2"));
-                }
-            }
-        }
+        
         public TwoPlayerPageViewModel()
         {
-            val = 20;
-            valP2 = 20;
+            Player1.LifeTotal = 20;
+            Player2.LifeTotal = 20;
             IncrementValCommand = new Command(() => IncrementVal());
             DecrementValCommand = new Command(() => DecrementVal());
             IncrementP2ValCommand = new Command(() => IncrementP2Val());
@@ -71,19 +42,19 @@ namespace SampleApp.ViewModels
 
         private void IncrementVal()
         {
-            Val++;
+            Player1.LifeTotal++;
         }
         private void DecrementVal()
         {
-            Val--;
+            Player1.LifeTotal--;
         }
         private void IncrementP2Val()
         {
-            ValP2++;
+            Player2.LifeTotal++;
         }
         private void DecrementP2Val()
         {
-            ValP2--;
+            Player2.LifeTotal--;
         }
     }
 }

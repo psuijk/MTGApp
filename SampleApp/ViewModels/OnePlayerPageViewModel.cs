@@ -10,6 +10,7 @@ namespace SampleApp.ViewModels
 {
     class OnePlayerPageViewModel : INotifyPropertyChanged
     {
+        Player Player1 = new Player();
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
@@ -24,38 +25,23 @@ namespace SampleApp.ViewModels
         public Command IncrementValCommand { get; set; }
         public Command DecrementValCommand { get; set; }
 
-        private int val;
 
-        public int Val
-        {
-            get
-            {
-                return val;
-            }
-            set
-            {
-                if (val != value)
-                {
-                    val = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Val"));
-                }
-            }
-        }
+
 
         public OnePlayerPageViewModel()
         {
-            val = 20;
+            Player1.LifeTotal = 20;
             IncrementValCommand = new Command(() => IncrementVal());
             DecrementValCommand = new Command(() => DecrementVal());
         }
 
         private void IncrementVal()
         {
-            Val++;
+            Player1.LifeTotal++;
         }
         private void DecrementVal()
         {
-            Val--;
+            Player1.LifeTotal--;
         }
     }
 }
