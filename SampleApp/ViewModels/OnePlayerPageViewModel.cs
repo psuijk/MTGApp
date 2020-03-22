@@ -21,8 +21,6 @@ namespace SampleApp.ViewModels
 
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-        private int lifeTotalP1;
         public int LifeTotalP1
         {
             get

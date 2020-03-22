@@ -29,8 +29,6 @@ namespace SampleApp.ViewModels
         public Command IncrementP2ValCommand { get; set; }
         public Command DecrementP2ValCommand { get; set; }
         
-
-        private int lifeTotalP1;
         public int LifeTotalP1
         {
             get
@@ -47,7 +45,6 @@ namespace SampleApp.ViewModels
             }
         }
 
-        private int lifeTotalP2;
         public int LifeTotalP2
         {
             get

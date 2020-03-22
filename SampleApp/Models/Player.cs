@@ -7,9 +7,9 @@ using System.Runtime.CompilerServices;
 
 namespace SampleApp.Models
 {
-    public class Player : INotifyPropertyChanged
+    public class Player 
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+
         public int LifeTotal { get; set; }
 
 
