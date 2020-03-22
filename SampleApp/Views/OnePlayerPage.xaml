@@ -10,11 +10,12 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Label Text="Life" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Large"/>
+                <Label Text="{Binding Val}" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Large"/>
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>
@@ -24,8 +25,8 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="+" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" />
-                <Button Text="-" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" />
+                <Button x:Name="IncrementBtn" Text="+" Grid.Row="0" Grid.Column="0" Command="{Binding IncrementValCommand}" HorizontalOptions="Center"/>
+                <Button x:Name="DecrementBtn" Text="+" Grid.Row="0" Grid.Column="1" Command="{Binding DecrementValCommand}" HorizontalOptions="Center"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

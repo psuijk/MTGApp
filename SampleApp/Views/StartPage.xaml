@@ -15,8 +15,14 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="One Player Game" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" />
-                <Button Text="Two Player Game" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" />
+                
+                <Button x:Name="OnePlayerGame" Text="One Player Game" 
+                        Command="{Binding StartOnePlayerGameCommand}" 
+                        Grid.Row="0" Grid.Column="0" 
+                        HorizontalOptions="Center"/>
+                <Button x:Name="TwoPlayerGame" Text="Two Player Game" 
+                        Command="{Binding StartTwoPlayerGameCommand}"
+                        Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>

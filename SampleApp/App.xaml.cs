@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SampleApp.ViewModels;
 
 namespace SampleApp
 {
@@ -10,8 +11,8 @@ namespace SampleApp
         {
             InitializeComponent();
 
+            //MainPage = new NavigationPage(new Views.StartPage(ViewModels.StartPageViewModel));
             MainPage = new NavigationPage(new Views.StartPage());
-
 
         }
 
