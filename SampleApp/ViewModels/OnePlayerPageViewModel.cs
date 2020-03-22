@@ -22,26 +22,40 @@ namespace SampleApp.ViewModels
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        private int lifeTotalP1;
+        public int LifeTotalP1
+        {
+            get
+            {
+                return Player1.LifeTotal;
+            }
+            set
+            {
+                if (Player1.LifeTotal != value)
+                {
+                    Player1.LifeTotal = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("LifeTotalP1"));
+                }
+            }
+        }
+
         public Command IncrementValCommand { get; set; }
         public Command DecrementValCommand { get; set; }
 
-
-
-
         public OnePlayerPageViewModel()
         {
-            Player1.LifeTotal = 20;
+            
             IncrementValCommand = new Command(() => IncrementVal());
             DecrementValCommand = new Command(() => DecrementVal());
         }
 
         private void IncrementVal()
         {
-            Player1.LifeTotal++;
+            LifeTotalP1++;
         }
         private void DecrementVal()
         {
-            Player1.LifeTotal--;
+            LifeTotalP1--;
         }
     }
 }

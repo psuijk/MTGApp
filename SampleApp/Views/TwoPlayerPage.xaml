@@ -16,7 +16,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Label Text="{Binding Val}" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Large"/>
+                    <Label Text="{Binding LifeTotalP1}" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Large"/>
                 </Grid>
                 <Grid>
                 <Grid.RowDefinitions>
@@ -38,7 +38,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                    <Label Text="{Binding ValP2}" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Large"/>
+                    <Label Text="{Binding LifeTotalP2}" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Large"/>
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>

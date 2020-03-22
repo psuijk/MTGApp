@@ -12,7 +12,7 @@ namespace SampleApp
             InitializeComponent();
 
             //MainPage = new NavigationPage(new Views.StartPage(ViewModels.StartPageViewModel));
-            MainPage = new NavigationPage(new Views.StartPage());
+            MainPage = new NavigationPage(new Views.OnePlayerPage());
 
         }
 
