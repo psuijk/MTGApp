@@ -10,10 +10,7 @@ namespace SampleApp
         public App()
         {
             InitializeComponent();
-
             MainPage = new NavigationPage(new Views.StartPage());
-            //MainPage = new NavigationPage(new Views.OnePlayerPage());
-
         }
 
         protected override void OnStart()

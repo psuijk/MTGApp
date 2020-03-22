@@ -32,7 +32,7 @@ namespace SampleApp.ViewModels
 
         public StartPageViewModel(INavigation navigation)
         {
-            this.Navigation = Navigation;
+            this.Navigation = navigation;
             StartOnePlayerGameCommand = new Command(() => StartOnePlayerGame());
             StartTwoPlayerGameCommand = new Command(() => StartTwoPlayerGame());
         }

@@ -12,9 +12,8 @@ namespace SampleApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StartPage : ContentPage
     {
-        public StartPage(ViewModels.StartPageViewModel vm)
+        public StartPage()
         {
-            vm.Navigation = Navigation;
             InitializeComponent();
             BindingContext = new StartPageViewModel(Navigation);
         }
