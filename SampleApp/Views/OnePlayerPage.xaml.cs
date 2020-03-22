@@ -14,6 +14,7 @@ namespace SampleApp.Views
     {
         public OnePlayerPage()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             BindingContext = new OnePlayerPageViewModel();
         }

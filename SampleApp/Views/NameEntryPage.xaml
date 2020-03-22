@@ -7,21 +7,32 @@
              x:Class="SampleApp.Views.NameEntryPage">
     <ContentPage.Content>
         <StackLayout Margin="20">
-            <!--<Label Text="Player 1 Name" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Medium"/>-->
-            <Editor Placeholder="Enter Name for Player 1"
-                Text="{Binding Text}"
-                HeightRequest="100" />
-            <!--<Label Text="Player 2 Name" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Medium"/>-->
-            <Editor Placeholder="Enter Name for Player 2"
-                Text="{Binding Text}"
-                HeightRequest="100" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <Entry
+                   x:Name="EntryNameP1"
+                   Placeholder="Enter a name for Player 1"
+                   Text="{Binding NameP1}"
+                   Grid.Row="0" Grid.Column="0"/>
+
+            <Entry x:Name="EntryNameP2"
+                   Placeholder="Enter a name for Player 2"
+                   Text="{Binding NameP2}"
+                   Grid.Row="1" Grid.Column="0"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" 
-                    Text="Start"/>
+                <Button x:Name="StartGame" Text="Start Game" 
+                        Command="{Binding StartGameCommand}"
+                        Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>

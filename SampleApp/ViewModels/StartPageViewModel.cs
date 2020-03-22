@@ -8,13 +8,8 @@ using SampleApp.Models;
 
 namespace SampleApp.ViewModels
 {
-    
-
-
     public class StartPageViewModel : INotifyPropertyChanged
     {
-        
-
         public INavigation Navigation { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;

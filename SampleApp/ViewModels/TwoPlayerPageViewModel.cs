@@ -28,7 +28,39 @@ namespace SampleApp.ViewModels
         public Command DecrementValCommand { get; set; }
         public Command IncrementP2ValCommand { get; set; }
         public Command DecrementP2ValCommand { get; set; }
-        
+ 
+        public string NameP1
+        {
+            get
+            {
+                return Player1.Name;
+            }
+            set
+            {
+                if (Player1.Name != value)
+                {
+                    Player1.Name = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("NameP1"));
+                }
+            }
+        }
+
+        public string NameP2
+        {
+            get
+            {
+                return Player2.Name;
+            }
+            set
+            {
+                if (Player2.Name != value)
+                {
+                    Player2.Name = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("NameP2"));
+                }
+            }
+        }
+
         public int LifeTotalP1
         {
             get
@@ -60,8 +92,19 @@ namespace SampleApp.ViewModels
                 }
             }
         }
-        public TwoPlayerPageViewModel()
+
+        public TwoPlayerPageViewModel(string name1, string name2)
         {
+            if (String.IsNullOrEmpty(name1) || String.IsNullOrEmpty(name2))
+            {
+                Player1.Name = "Player 1";
+                Player2.Name = "Player 2";
+            }
+            else
+            {
+                Player1.Name = name1;
+                Player2.Name = name2;
+            }
             Player1.LifeTotal = 20;
             Player2.LifeTotal = 20;
             IncrementValCommand = new Command(() => IncrementVal());
@@ -86,6 +129,7 @@ namespace SampleApp.ViewModels
         {
             LifeTotalP2--;
         }
+        
     }
 }
 

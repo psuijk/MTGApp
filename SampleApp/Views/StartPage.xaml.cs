@@ -14,6 +14,7 @@ namespace SampleApp.Views
     {
         public StartPage()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             BindingContext = new StartPageViewModel(Navigation);
         }

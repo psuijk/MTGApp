@@ -6,6 +6,7 @@ namespace SampleApp
     {
         public TestPage()
         {
+
             InitializeComponent();
             BindingContext = new TestPageViewModel();
         }

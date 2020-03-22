@@ -24,24 +24,6 @@ namespace SampleApp
 
         public Command IncrementValCommand { get; set; }
 
-        /*
-        private int val;
-
-        public int Val { 
-            get
-            {
-                return val;
-            }
-            set
-            {
-                if (val != value)
-                {
-                    val = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Val"));
-                }
-            }
-        }
-        */
         public TestPageViewModel()
         {
             Player1.LifeTotal = 0;

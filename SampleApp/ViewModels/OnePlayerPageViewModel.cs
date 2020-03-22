@@ -42,7 +42,7 @@ namespace SampleApp.ViewModels
 
         public OnePlayerPageViewModel()
         {
-            
+            Player1.LifeTotal = 20;   
             IncrementValCommand = new Command(() => IncrementVal());
             DecrementValCommand = new Command(() => DecrementVal());
         }
