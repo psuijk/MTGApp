@@ -17,7 +17,7 @@
                 </Grid.ColumnDefinitions>
                 <Label Text="{Binding LifeTotalP1}" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Large"/>
             </Grid>
-            <Grid>
+            <Grid Margin="60">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
@@ -25,8 +25,8 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button x:Name="IncrementBtn" Text="+" Grid.Row="0" Grid.Column="0" Command="{Binding IncrementValCommand}" HorizontalOptions="Center"/>
-                <Button x:Name="DecrementBtn" Text="+" Grid.Row="0" Grid.Column="1" Command="{Binding DecrementValCommand}" HorizontalOptions="Center"/>
+                <Button x:Name="IncrementBtn" Text="+" Grid.Row="0" Grid.Column="0" Command="{Binding IncrementValCommand}" HorizontalOptions="Center" Padding="60"/>
+                <Button x:Name="DecrementBtn" Text="+" Grid.Row="0" Grid.Column="1" Command="{Binding DecrementValCommand}" HorizontalOptions="Center" Padding="60"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

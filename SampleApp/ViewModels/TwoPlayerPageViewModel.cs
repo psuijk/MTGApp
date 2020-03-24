@@ -28,7 +28,8 @@ namespace SampleApp.ViewModels
         public Command DecrementValCommand { get; set; }
         public Command IncrementP2ValCommand { get; set; }
         public Command DecrementP2ValCommand { get; set; }
- 
+        public Command EndGameCommand { get; set; }
+
         public string NameP1
         {
             get
@@ -111,6 +112,7 @@ namespace SampleApp.ViewModels
             DecrementValCommand = new Command(() => DecrementVal());
             IncrementP2ValCommand = new Command(() => IncrementP2Val());
             DecrementP2ValCommand = new Command(() => DecrementP2Val());
+            EndGameCommand = new Command(() => EndGame());
         }
 
         private void IncrementVal()
@@ -129,7 +131,11 @@ namespace SampleApp.ViewModels
         {
             LifeTotalP2--;
         }
-        
+        private void EndGame()
+        {
+            //fill this in
+        }
+
     }
 }
 

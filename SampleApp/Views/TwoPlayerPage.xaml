@@ -17,7 +17,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Label Text="{Binding NameP1}" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Large"/>
-                    <Label Text="{Binding LifeTotalP1}" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Large"/>
+                    <Label Text="{Binding LifeTotalP1}" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Large" Margin="5"/>
                 </Grid>
                 <Grid>
                 <Grid.RowDefinitions>
@@ -27,8 +27,8 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="IncrementBtn" Text="+" Grid.Row="0" Grid.Column="0" Command="{Binding IncrementValCommand}" HorizontalOptions="Center"/>
-                    <Button x:Name="DecrementBtn" Text="-" Grid.Row="0" Grid.Column="1" Command="{Binding DecrementValCommand}" HorizontalOptions="Center"/>
+                    <Button x:Name="IncrementBtn" Text="+" Grid.Row="0" Grid.Column="0" Command="{Binding IncrementValCommand}" HorizontalOptions="Center" Padding="60" FontSize="Large"/>
+                    <Button x:Name="DecrementBtn" Text="-" Grid.Row="0" Grid.Column="1" Command="{Binding DecrementValCommand}" HorizontalOptions="Center" Padding="60" FontSize="Large"/>
                 </Grid>
         </StackLayout>
             <StackLayout VerticalOptions="CenterAndExpand">
@@ -40,7 +40,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                     <Label Text="{Binding NameP2}" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Large"/>
-                    <Label Text="{Binding LifeTotalP2}" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Large"/>
+                    <Label Text="{Binding LifeTotalP2}" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Large" Margin="5" />
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>
@@ -50,8 +50,17 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                    <Button x:Name="IncrementP2Btn" Text="+" Grid.Row="0" Grid.Column="0" Command="{Binding IncrementP2ValCommand}" HorizontalOptions="Center"/>
-                    <Button x:Name="DecrementP2Btn" Text="-" Grid.Row="0" Grid.Column="1" Command="{Binding DecrementP2ValCommand}" HorizontalOptions="Center"/>
+                    <Button x:Name="IncrementP2Btn" Text="+" Grid.Row="0" Grid.Column="0" Command="{Binding IncrementP2ValCommand}" HorizontalOptions="Center" Padding="60" FontSize="Large"/>
+                    <Button x:Name="DecrementP2Btn" Text="-" Grid.Row="0" Grid.Column="1" Command="{Binding DecrementP2ValCommand}" HorizontalOptions="Center" Padding="60" FontSize="Large"/>
+            </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="EndGame" Text="End Game" Grid.Row="0" Grid.Column="0" Command="{Binding EndGameCommand}" HorizontalOptions="Center" Margin="60" Padding="15" FontSize="Body"/>
                 </Grid>
         </StackLayout>
         </StackLayout>

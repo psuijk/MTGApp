@@ -4,27 +4,31 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="SampleApp.Views.StartPage">
+             x:Class="SampleApp.Views.HomePage">
     <ContentPage.Content>
         <StackLayout>
             <Grid VerticalOptions="CenterAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                
-                <Button x:Name="OnePlayerGame" Text="One Player Game" 
-                        Command="{Binding StartOnePlayerGameCommand}" 
+                <Button x:Name="SinglePhonePlay" Text="Single-Phone Play" 
+                        Command="{Binding SinglePhonePlayCommand}" 
                         Grid.Row="0" Grid.Column="0" 
                         HorizontalOptions="Center"
-                        Padding="50"/>
-                <Button x:Name="TwoPlayerGame" Text="Two Player Game" 
-                        Command="{Binding StartTwoPlayerGameCommand}"
-                        Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" 
-                        Padding="50"/>
+                        Padding="60"/>
+                <Button x:Name="MultiPhonePlay" Text="Multi-Phone Play" 
+                        Command="{Binding MultiPhonePlayCommand}"
+                        Grid.Row="1" Grid.Column="0" HorizontalOptions="Center"
+                        Padding="60"/>
+                <Button x:Name="Settings" Text="Settings"
+                        Command="{Binding SettingsCommand}"
+                        Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" 
+                        Padding="60"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

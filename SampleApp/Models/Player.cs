@@ -12,7 +12,6 @@ namespace SampleApp.Models
 
         public int LifeTotal { get; set; }
 
-
         public string Name { get; set; }
 
     }
