@@ -6,45 +6,37 @@
              mc:Ignorable="d"
              x:Class="SampleApp.Views.OnePlayerPage">
     <ContentPage.Content>
-        <StackLayout Padding="0" Spacing="0">
-            <Grid>
+        <StackLayout  Padding="0" Spacing="0">
+            <Grid Margin="0" RowSpacing="0" ColumnSpacing="0" VerticalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
+                    <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Label Text="{Binding LifeTotalP1}" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Large"/>
-            </Grid>
-            <Grid Margin="0" RowSpacing="0" ColumnSpacing="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100" />
-                    <ColumnDefinition Width="100" />
-                </Grid.ColumnDefinitions>
+     
+         
+         
 
                 <BoxView Grid.Row="0"
                  Grid.Column="0"
-                 Color="Purple" />
-                <Label Grid.Row="0"
-                Grid.Column="0"
-                Text="+"
-                HorizontalOptions="Center"
-                VerticalOptions="Center" />
-                <Button x:Name="IncrementBtn" Text="+" Grid.Row="0" Grid.Column="0" Command="{Binding IncrementValCommand}" Opacity="0"/>
-
-                <BoxView Grid.Row="0"
-                 Grid.Column="1"
-                 Color="Red" />
-                <Label Grid.Row="0"
-                Grid.Column="1"
-                Text="-"
-                HorizontalOptions="Center"
-                VerticalOptions="Center" />
-                <Button x:Name="DecrementBtn" Text="+" Grid.Row="0" Grid.Column="1" Command="{Binding DecrementValCommand}" Opacity="0"/>
+                 Grid.ColumnSpan="1"
+                 Grid.RowSpan="2"
+                 Color="Purple" 
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"/>
+                <Label Text="{Binding LifeTotalP1}" 
+                 Grid.RowSpan="2" 
+                 Grid.Row="0" 
+                 Grid.Column="0" 
+                 HorizontalTextAlignment="Center" 
+                 VerticalOptions="Center" 
+                 HorizontalOptions="Center" 
+                 FontSize="Large"
+                 TextColor="White"/>
+                
+                <Button x:Name="IncrementBtn" Grid.Row="0" Grid.Column="0" Command="{Binding IncrementValCommand}" Opacity="0"/>
+                <Button x:Name="DecrementBtn" Grid.Row="1" Grid.Column="0" Command="{Binding DecrementValCommand}" Opacity="0"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
