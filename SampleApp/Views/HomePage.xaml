@@ -21,10 +21,7 @@
                         Grid.Row="0" Grid.Column="0" 
                         HorizontalOptions="Center"
                         Padding="60"/>
-                <Button x:Name="MultiPhonePlay" Text="Multi-Phone Play" 
-                        Command="{Binding MultiPhonePlayCommand}"
-                        Grid.Row="1" Grid.Column="0" HorizontalOptions="Center"
-                        Padding="60"/>
+                
                 <Button x:Name="Settings" Text="Settings"
                         Command="{Binding SettingsCommand}"
                         Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" 

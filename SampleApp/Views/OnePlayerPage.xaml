@@ -15,9 +15,6 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
      
-         
-         
-
                 <BoxView Grid.Row="0"
                  Grid.Column="0"
                  Grid.ColumnSpan="1"
@@ -32,7 +29,7 @@
                  HorizontalTextAlignment="Center" 
                  VerticalOptions="Center" 
                  HorizontalOptions="Center" 
-                 FontSize="Large"
+                 FontSize="75"
                  TextColor="White"/>
                 
                 <Button x:Name="IncrementBtn" Grid.Row="0" Grid.Column="0" Command="{Binding IncrementValCommand}" Opacity="0"/>
