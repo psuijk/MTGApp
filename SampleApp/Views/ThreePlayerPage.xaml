@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SampleApp.Views.ThreePlayerPage">
+    <ContentPage.Content>
+        <StackLayout  Padding="0" Spacing="0">
+            <Grid Margin="0" RowSpacing="0" ColumnSpacing="0" VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <BoxView Grid.Row="0"
+                 Grid.Column="0"
+                 Grid.ColumnSpan="2"
+                 Grid.RowSpan="4"
+                 Color="Purple" 
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"/>
+                <Label Text="{Binding LifeTotalP1}" 
+                 Grid.RowSpan="2" 
+                 Grid.ColumnSpan="2"
+                 Grid.Row="1" 
+                 Grid.Column="0" 
+                 Rotation="90"
+                 HorizontalTextAlignment="Center" 
+                 VerticalOptions="Center" 
+                 HorizontalOptions="Center" 
+                 FontSize="75"
+                 TextColor="White"/>
+
+                <Button x:Name="IncrementBtn" Grid.Row="0" Grid.RowSpan="4" Grid.Column="1" Command="{Binding IncrementValCommand}" Opacity="0"/>
+                <Button x:Name="DecrementBtn" Grid.Row="0" Grid.RowSpan="4"  Grid.Column="0" Command="{Binding DecrementValCommand}" Opacity="0"/>
+
+
+                <BoxView Grid.Row="0"
+                 Grid.Column="2"
+                 Grid.ColumnSpan="2"
+                 Grid.RowSpan="4"
+                 Color="Orange" 
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"/>
+                <Label Text="{Binding LifeTotalP3}" 
+                 Grid.RowSpan="2" 
+                 Grid.ColumnSpan="2"
+                 Grid.Row="1" 
+                 Grid.Column="2" 
+                 Rotation="-90"
+                 HorizontalTextAlignment="Center" 
+                 VerticalOptions="Center" 
+                 HorizontalOptions="Center" 
+                 FontSize="75"
+                 TextColor="White"/>
+
+                <Button x:Name="IncrementP3Btn" Grid.Row="0" Grid.RowSpan="4"  Grid.Column="2" Command="{Binding IncrementP3ValCommand}" Opacity="0"/>
+                <Button x:Name="DecrementP3Btn" Grid.Row="0" Grid.RowSpan="4" Grid.Column="3" Command="{Binding DecrementP3ValCommand}" Opacity="0"/>
+
+
+                <BoxView Grid.Row="4"
+                 Grid.Column="0"
+                 Grid.ColumnSpan="4"
+                 Grid.RowSpan="2"
+                 Color="Blue" 
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"/>
+                <Label Text="{Binding LifeTotalP2}" 
+                 Grid.RowSpan="2" 
+                 Grid.Row="4" 
+                 Grid.Column="0" 
+                 Grid.ColumnSpan="4"
+                 HorizontalTextAlignment="Center" 
+                 VerticalOptions="Center" 
+                 HorizontalOptions="Center" 
+                 FontSize="75"
+                 TextColor="White"/>
+
+                <Button x:Name="IncrementP2Btn" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Command="{Binding IncrementP2ValCommand}" Opacity="0"/>
+                <Button x:Name="DecrementP2Btn" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" Command="{Binding DecrementP2ValCommand}" Opacity="0"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
