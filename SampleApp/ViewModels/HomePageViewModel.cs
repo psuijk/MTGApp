@@ -21,19 +21,19 @@ namespace SampleApp.ViewModels
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public Command SinglePhonePlayCommand { get; set; }
+        public Command StartCommand { get; set; }
         public Command MultiPhonePlayCommand { get; set; }
         public Command SettingsCommand { get; set; }
 
         public HomePageViewModel(INavigation navigation)
         {
             this.Navigation = navigation;
-            SinglePhonePlayCommand = new Command(() => SinglePhonePlay());
+            StartCommand = new Command(() => Start());
             MultiPhonePlayCommand = new Command(() => MultiPhonePlay());
             SettingsCommand = new Command(() => Settings());
         }
 
-        private void SinglePhonePlay()
+        private void Start()
         {
             this.Navigation.PushAsync(new Views.StartPage());
         }
