@@ -94,18 +94,9 @@ namespace SampleApp.ViewModels
             }
         }
 
-        public TwoPlayerPageViewModel(string name1, string name2)
+        public TwoPlayerPageViewModel()
         {
-            if (String.IsNullOrEmpty(name1) || String.IsNullOrEmpty(name2))
-            {
-                Player1.Name = "Player 1";
-                Player2.Name = "Player 2";
-            }
-            else
-            {
-                Player1.Name = name1;
-                Player2.Name = name2;
-            }
+            
             Player1.LifeTotal = 20;
             Player2.LifeTotal = 20;
             IncrementValCommand = new Command(() => IncrementVal());

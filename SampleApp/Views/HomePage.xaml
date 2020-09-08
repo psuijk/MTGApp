@@ -16,8 +16,8 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button x:Name="SinglePhonePlay" Text="Single-Phone Play" 
-                        Command="{Binding SinglePhonePlayCommand}" 
+                <Button x:Name="Start" Text="Start" 
+                        Command="{Binding StartCommand}" 
                         Grid.Row="0" Grid.Column="0" 
                         HorizontalOptions="Center"
                         Padding="60"/>

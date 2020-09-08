@@ -44,7 +44,7 @@ namespace SampleApp.ViewModels
 
         private void StartTwoPlayerGame()
         {
-            this.Navigation.PushAsync(new Views.NameEntryPage());
+            this.Navigation.PushAsync(new Views.TwoPlayerPage());
         }
 
         private void StartThreePlayerGame()
