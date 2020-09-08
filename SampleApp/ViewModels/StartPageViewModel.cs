@@ -25,6 +25,7 @@ namespace SampleApp.ViewModels
         public Command StartOnePlayerGameCommand { get; set; }
         public Command StartTwoPlayerGameCommand { get; set; }
         public Command StartThreePlayerGameCommand { get; set; }
+        public Command StartFourPlayerGameCommand { get; set; }
 
 
         public StartPageViewModel(INavigation navigation)
@@ -33,6 +34,7 @@ namespace SampleApp.ViewModels
             StartOnePlayerGameCommand = new Command(() => StartOnePlayerGame());
             StartTwoPlayerGameCommand = new Command(() => StartTwoPlayerGame());
             StartThreePlayerGameCommand = new Command(() => StartThreePlayerGame());
+            StartFourPlayerGameCommand = new Command(() => StartFourPlayerGame());
         }
 
         private void StartOnePlayerGame()
@@ -48,6 +50,11 @@ namespace SampleApp.ViewModels
         private void StartThreePlayerGame()
         {
             this.Navigation.PushAsync(new Views.ThreePlayerPage());
+        }
+
+        private void StartFourPlayerGame()
+        {
+            this.Navigation.PushAsync(new Views.FourPlayerPage());
         }
     }
 }

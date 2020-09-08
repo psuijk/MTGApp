@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -24,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\FourPlayerPage.xaml.cs">
+      <DependentUpon>FourPlayerPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\ThreePlayerPage.xaml.cs">
       <DependentUpon>ThreePlayerPage.xaml</DependentUpon>
     </Compile>

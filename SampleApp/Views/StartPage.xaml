@@ -30,6 +30,10 @@
                         Command="{Binding StartThreePlayerGameCommand}"
                         Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" 
                         Padding="50"/>
+                <Button x:Name="FourPlayerGame" Text="Four Player Game" 
+                        Command="{Binding StartFourPlayerGameCommand}"
+                        Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" 
+                        Padding="50"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
