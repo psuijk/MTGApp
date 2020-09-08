@@ -76,7 +76,7 @@ namespace SampleApp.ViewModels
         private void StartGame(string name1, string name2)
         {
             
-            this.Navigation.PushAsync(new Views.TwoPlayerPage(name1, name2));
+            this.Navigation.PushAsync(new Views.TwoPlayerPage());
         }
 
     }

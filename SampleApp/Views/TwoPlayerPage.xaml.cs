@@ -12,11 +12,12 @@ namespace SampleApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TwoPlayerPage : ContentPage
     {
-        public TwoPlayerPage(string name1, string name2)
+        public TwoPlayerPage()
         {
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
-            BindingContext = new TwoPlayerPageViewModel(name1, name2);
+            BindingContext = new TwoPlayerPageViewModel();
         }
+
     }
 }
