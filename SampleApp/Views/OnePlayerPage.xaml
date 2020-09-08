@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="SampleApp.Views.OnePlayerPage">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center">
+        <StackLayout Padding="0" Spacing="0">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -17,16 +17,34 @@
                 </Grid.ColumnDefinitions>
                 <Label Text="{Binding LifeTotalP1}" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Large"/>
             </Grid>
-            <Grid Margin="60">
+            <Grid Margin="0" RowSpacing="0" ColumnSpacing="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
                 </Grid.ColumnDefinitions>
-                <Button x:Name="IncrementBtn" Text="+" Grid.Row="0" Grid.Column="0" Command="{Binding IncrementValCommand}" HorizontalOptions="Center" Padding="60"/>
-                <Button x:Name="DecrementBtn" Text="+" Grid.Row="0" Grid.Column="1" Command="{Binding DecrementValCommand}" HorizontalOptions="Center" Padding="60"/>
+
+                <BoxView Grid.Row="0"
+                 Grid.Column="0"
+                 Color="Purple" />
+                <Label Grid.Row="0"
+                Grid.Column="0"
+                Text="+"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+                <Button x:Name="IncrementBtn" Text="+" Grid.Row="0" Grid.Column="0" Command="{Binding IncrementValCommand}" Opacity="0"/>
+
+                <BoxView Grid.Row="0"
+                 Grid.Column="1"
+                 Color="Red" />
+                <Label Grid.Row="0"
+                Grid.Column="1"
+                Text="-"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+                <Button x:Name="DecrementBtn" Text="+" Grid.Row="0" Grid.Column="1" Command="{Binding DecrementValCommand}" Opacity="0"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
