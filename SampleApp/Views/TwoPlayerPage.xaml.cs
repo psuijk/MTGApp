@@ -17,6 +17,14 @@ namespace SampleApp.Views
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             BindingContext = new TwoPlayerPageViewModel();
+            ChangeMe.BackgroundColor = Color.Orange;
+        }
+
+        void OnSwipedP1(object sender, EventArgs args)
+        {
+            ChangeMe.BackgroundColor = Color.DarkRed;
+            var counterChooserView = new BoxView { BackgroundColor = Color.SandyBrown };
+            Player1LifeGrid.Children.Add(counterChooserView, 0, 0);
         }
 
     }

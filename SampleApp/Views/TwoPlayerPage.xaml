@@ -18,7 +18,7 @@
                 </Grid.ColumnDefinitions>
 
                 <yummy:PancakeView Grid.Row="0" CornerRadius="30,30,30,30" VerticalOptions="FillAndExpand">
-                    <Grid Grid.Row="0" Grid.Column="0" RowSpacing="0" ColumnSpacing="0" VerticalOptions="FillAndExpand">
+                    <Grid x:Name="Player1LifeGrid" Grid.Row="0" Grid.Column="0" RowSpacing="0" ColumnSpacing="0" VerticalOptions="FillAndExpand">
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition/>
@@ -27,16 +27,17 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
 
-                        <BoxView Grid.Row="0"
+                        <BoxView 
+                        x:Name="ChangeMe"
+                        Grid.Row="0"
                         Grid.Column="0"
                         Grid.ColumnSpan="1"
                         Grid.RowSpan="1"
-                        Color="Orange" 
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="FillAndExpand">
                             <BoxView.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding DecrementValCommand}" />
-                                <SwipeGestureRecognizer Direction="Down" Command="{Binding SwipeP1Command}" CommandParameter="Left" />
+                                <SwipeGestureRecognizer Swiped="OnSwipedP1" Direction="Down" />
                             </BoxView.GestureRecognizers>
                         </BoxView>
                         <BoxView Grid.Row="1"
