@@ -32,6 +32,9 @@ namespace SampleApp.ViewModels
         public Command IncrementP3ValCommand { get; set; }
         public Command DecrementP3ValCommand { get; set; }
         public Command EndGameCommand { get; set; }
+        public Command SwipeP1Command { get; set; }
+        public Command SwipeP2Command { get; set; }
+        public Command SwipeP3Command { get; set; }
 
         public string NameP1
         {
@@ -136,6 +139,9 @@ namespace SampleApp.ViewModels
             IncrementP3ValCommand = new Command(() => IncrementP3Val());
             DecrementP3ValCommand = new Command(() => DecrementP3Val());
             EndGameCommand = new Command(() => EndGame());
+            SwipeP1Command = new Command(() => SwipeP1());
+            SwipeP2Command = new Command(() => SwipeP2());
+            SwipeP3Command = new Command(() => SwipeP3());
         }
 
         private void IncrementVal()
@@ -165,6 +171,18 @@ namespace SampleApp.ViewModels
         private void EndGame()
         {
             //fill this in
+        }
+        private void SwipeP1()
+        {
+            LifeTotalP1 = 999;
+        }
+        private void SwipeP2()
+        {
+            LifeTotalP2 = 999;
+        }
+        private void SwipeP3()
+        {
+            LifeTotalP3 = 999;
         }
 
     }
