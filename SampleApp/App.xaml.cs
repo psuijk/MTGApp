@@ -9,6 +9,7 @@ namespace SampleApp
     {
         public App()
         {
+            Device.SetFlags(new[] { "SwipeView_Experimental" });
             InitializeComponent();
             MainPage = new NavigationPage(new Views.HomePage());
         }

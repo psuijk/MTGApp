@@ -17,27 +17,30 @@ namespace SampleApp.Views
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             BindingContext = new ThreePlayerPageViewModel();
-            Player1Pancake.BackgroundColor = Color.Blue;
-            Player2Pancake.BackgroundColor = Color.Red;
-            Player3Pancake.BackgroundColor = Color.Green;
         }
-        void OnSwipedP1(object sender, EventArgs args)
+
+        protected override void OnAppearing()
         {
-            Player1Pancake.BackgroundColor = Color.DarkRed;
-            var counterChooserView = new BoxView { BackgroundColor = Color.SandyBrown };
-            Player1LifeGrid.Children.Add(counterChooserView, 0, 0);
-        }
-        void OnSwipedP2(object sender, EventArgs args)
-        {
-            Player2Pancake.BackgroundColor = Color.DarkRed;
-            var counterChooserView = new BoxView { BackgroundColor = Color.SandyBrown };
-            Player2LifeGrid.Children.Add(counterChooserView, 0, 2);
-        }
-        void OnSwipedP3(object sender, EventArgs args)
-        {
-            Player3Pancake.BackgroundColor = Color.DarkRed;
-            var counterChooserView = new BoxView { BackgroundColor = Color.SandyBrown };
-            Player3LifeGrid.Children.Add(counterChooserView, 4, 0);
+            Player1LifeView.BindingContext = BindingContext;
+            Player1LifeView.SetOrientation(90);
+            Player1LifeView.SetTopColor(Color.Blue);
+            Player1LifeView.SetLabelBinding("LifeTotalP1");
+            Player1LifeView.SetIncrementBinding("IncrementValCommand");
+            Player1LifeView.SetDecrementBinding("DecrementValCommand");
+
+            Player2LifeView.BindingContext = BindingContext;
+            Player2LifeView.SetOrientation(-90);
+            Player2LifeView.SetTopColor(Color.Red);
+            Player2LifeView.SetLabelBinding("LifeTotalP2");
+            Player2LifeView.SetIncrementBinding("IncrementP2ValCommand");
+            Player2LifeView.SetDecrementBinding("DecrementP2ValCommand");
+
+            Player3LifeView.BindingContext = BindingContext;
+            Player3LifeView.SetOrientation(0);
+            Player3LifeView.SetTopColor(Color.MediumPurple);
+            Player3LifeView.SetLabelBinding("LifeTotalP3");
+            Player3LifeView.SetIncrementBinding("IncrementP3ValCommand");
+            Player3LifeView.SetDecrementBinding("DecrementP3ValCommand");
         }
     }
 }

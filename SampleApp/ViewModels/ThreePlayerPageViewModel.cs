@@ -36,9 +36,9 @@ namespace SampleApp.ViewModels
         public Command SwipeP2Command { get; set; }
         public Command SwipeP3Command { get; set; }
 
-        public string NameP1
-        {
-            get
+     //   public string NameP1
+      //  {
+       /*     get
             {
                 return Player1.Name;
             }
@@ -50,7 +50,7 @@ namespace SampleApp.ViewModels
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("NameP1"));
                 }
             }
-        }
+        }*/
 
         public string NameP2
         {
@@ -120,7 +120,7 @@ namespace SampleApp.ViewModels
         {
             //if (String.IsNullOrEmpty(name1) || String.IsNullOrEmpty(name2))
             //{
-                Player1.Name = "Player 1";
+         //       Player1.Name = "Player 1";
                 Player2.Name = "Player 2";
             Player3.Name = "Player 3";
             //}
@@ -174,7 +174,7 @@ namespace SampleApp.ViewModels
         }
         private void SwipeP1()
         {
-            LifeTotalP1 = 999;
+    //        LifeTotalP1 = 999;
         }
         private void SwipeP2()
         {
