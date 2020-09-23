@@ -106,8 +106,6 @@ namespace SampleApp.ViewModels
             IncrementP2ValCommand = new Command(() => IncrementP2Val());
             DecrementP2ValCommand = new Command(() => DecrementP2Val());
             EndGameCommand = new Command(() => EndGame());
-            SwipeP1Command = new Command(() => SwipeP1());
-            SwipeP2Command = new Command(() => SwipeP2());
         }
 
         private void IncrementVal()
@@ -120,23 +118,17 @@ namespace SampleApp.ViewModels
         }
         private void IncrementP2Val()
         {
+            Console.WriteLine("incrementing " + LifeTotalP2);
             LifeTotalP2++;
         }
         private void DecrementP2Val()
         {
+            Console.WriteLine("decrementing " + LifeTotalP2);
             LifeTotalP2--;
         }
         private void EndGame()
         {
             //fill this in
-        }
-        private void SwipeP1()
-        {
-            LifeTotalP1 = 1000;
-        }
-        private void SwipeP2()
-        {
-            LifeTotalP2 = 1000;
         }
 
     }

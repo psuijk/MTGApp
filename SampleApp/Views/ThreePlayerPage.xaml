@@ -8,7 +8,6 @@
              mc:Ignorable="d"
              x:Class="SampleApp.Views.ThreePlayerPage">
     <ContentPage.Content>
-
         <StackLayout Padding="0" Spacing="0" BackgroundColor="Black">
             <Grid RowSpacing="0" ColumnSpacing="0" VerticalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
@@ -20,7 +19,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <yummy:PancakeView x:Name="Player1View" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1"  CornerRadius="30,30,30,30" VerticalOptions="FillAndExpand">
+                <yummy:PancakeView x:Name="Player1View" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" CornerRadius="30,30,30,30" VerticalOptions="FillAndExpand">
                     <views:PlayerLifeView x:Name="Player1LifeView"/>
                 </yummy:PancakeView>
                 <yummy:PancakeView x:Name="Player2View" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" CornerRadius="30,30,30,30" HorizontalOptions="FillAndExpand">

@@ -13,7 +13,7 @@
                 <SwipeItems>
                     <SwipeItemView x:Name="PlayerLifeSwipeItemView">
                         <yummy:PancakeView VerticalOptions="FillAndExpand">
-                            <Label x:Name="HiddenViewLabel" Text="Haha poison or cmdr dmg?" TextColor="DarkMagenta" FontSize="40" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label x:Name="HiddenViewLabel" Text="Test Text" TextColor="DarkMagenta" FontSize="40" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center"/>
                         </yummy:PancakeView>
                     </SwipeItemView>
                 </SwipeItems>
@@ -45,7 +45,7 @@
                         Grid.ColumnSpan="2"
                         Opacity="0">
                         <BoxView.GestureRecognizers>
-                            <TapGestureRecognizer x:Name="DecrementTapGestureRecognizer" />
+                            <TapGestureRecognizer x:Name="DecrementTapGestureRecognizer"/>
                         </BoxView.GestureRecognizers>
                     </BoxView>
                     <BoxView
@@ -55,12 +55,11 @@
                         Grid.ColumnSpan="2"
                         Opacity="0">
                         <BoxView.GestureRecognizers>
-                            <TapGestureRecognizer x:Name="IncrementTapGestureRecognizer" />
+                            <TapGestureRecognizer x:Name="IncrementTapGestureRecognizer"/>
                         </BoxView.GestureRecognizers>
                     </BoxView>
                 </Grid>
             </yummy:PancakeView>
-
         </SwipeView>
     </ContentView.Content>
 </ContentView>

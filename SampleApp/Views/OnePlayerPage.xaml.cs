@@ -18,5 +18,15 @@ namespace SampleApp.Views
             InitializeComponent();
             BindingContext = new OnePlayerPageViewModel();
         }
+
+        protected override void OnAppearing()
+        {
+            Player1LifeView.BindingContext = BindingContext;
+            Player1LifeView.SetOrientation(0);
+            Player1LifeView.SetTopColor(Color.Blue);
+            Player1LifeView.SetLabelBinding("LifeTotalP1");
+            Player1LifeView.SetIncrementBinding("IncrementValCommand");
+            Player1LifeView.SetDecrementBinding("DecrementValCommand");
+        }
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SampleApp.ViewModels;
+﻿using SampleApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,15 +12,23 @@ namespace SampleApp.Views
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             BindingContext = new TwoPlayerPageViewModel();
-            ChangeMe.BackgroundColor = Color.Orange;
         }
 
-        void OnSwipedP1(object sender, EventArgs args)
+        protected override void OnAppearing()
         {
-            ChangeMe.BackgroundColor = Color.DarkRed;
-            var counterChooserView = new BoxView { BackgroundColor = Color.SandyBrown };
-            Player1LifeGrid.Children.Add(counterChooserView, 0, 0);
-        }
+            Player1LifeView.BindingContext = BindingContext;
+            Player1LifeView.SetOrientation(0);
+            Player1LifeView.SetTopColor(Color.Blue);
+            Player1LifeView.SetLabelBinding("LifeTotalP1");
+            Player1LifeView.SetIncrementBinding("IncrementValCommand");
+            Player1LifeView.SetDecrementBinding("DecrementValCommand");
 
+            Player2LifeView.BindingContext = BindingContext;
+            Player2LifeView.SetOrientation(180);
+            Player2LifeView.SetTopColor(Color.Red);
+            Player2LifeView.SetLabelBinding("LifeTotalP2");
+            Player2LifeView.SetIncrementBinding("IncrementP2ValCommand");
+            Player2LifeView.SetDecrementBinding("DecrementP2ValCommand");
+        }
     }
 }
