@@ -17,9 +17,10 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <yummy:PancakeView x:Name="Player1View" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" CornerRadius="30,30,30,30" VerticalOptions="FillAndExpand">
-                    <views:PlayerLifeView x:Name="Player1LifeView"/>
-                </yummy:PancakeView>
+                <!--<yummy:PancakeView x:Name="Player1View" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" CornerRadius="30,30,30,30" VerticalOptions="FillAndExpand">-->
+                <!--<views:PlayerLifeView x:Name="Player1LifeView"/>-->
+                <views:CustomSwipeView/>
+                <!--</yummy:PancakeView>-->
             </Grid>
         </StackLayout>
     </ContentPage.Content>

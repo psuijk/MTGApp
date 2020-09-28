@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SampleApp.Views.CustomSwipeView">
+    <Grid>
+        <Grid.GestureRecognizers>
+            <PanGestureRecognizer PanUpdated="OnPanUpdated" />
+        </Grid.GestureRecognizers>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0"  x:Name="Flyout" BackgroundColor="Transparent" Margin="0" Padding="0">
+
+            <BoxView WidthRequest="300" HeightRequest="300"
+                        Grid.Row="0"
+                 Grid.Column="0"
+                 Grid.ColumnSpan="1"
+                 Color="Purple" 
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"/>
+        </Grid>
+
+        <Grid x:Name="CustomMainContent" BackgroundColor="Transparent" Margin="0" Padding="0">
+
+            <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <BoxView WidthRequest="300" HeightRequest="300"
+                        Grid.Row="0"
+                 Grid.Column="0"
+                 Grid.ColumnSpan="1"
+                 Color="Green" 
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"/>
+            </Grid>
+    </Grid>
+</ContentView>

@@ -7,19 +7,31 @@
              mc:Ignorable="d"
              x:Class="SampleApp.Views.PlayerLifeView"
              x:Name="PlayerLifeContentView">
-  <ContentView.Content>
-        <SwipeView x:Name="PlayerLifeSwipeView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <SwipeView.TopItems>
-                <SwipeItems>
-                    <SwipeItemView x:Name="PlayerLifeSwipeItemView">
-                        <yummy:PancakeView VerticalOptions="FillAndExpand">
-                            <Label x:Name="HiddenViewLabel" Text="Test Text" TextColor="DarkMagenta" FontSize="40" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center"/>
-                        </yummy:PancakeView>
-                    </SwipeItemView>
-                </SwipeItems>
-            </SwipeView.TopItems>
-            <yummy:PancakeView CornerRadius="30,30,30,30">
-                <Grid x:Name="PlayerLifeGrid" ColumnSpacing="0" RowSpacing="0">
+    <Grid>
+          <!--  <Grid.GestureRecognizers>
+                <PanGestureRecognizer PanUpdated="OnPanUpdated" />
+            </Grid.GestureRecognizers>-->
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0">
+            <!--<yummy:PancakeView x:Name="Flyout" VerticalOptions="FillAndExpand">-->
+            <ScrollView x:Name="Flyout" Orientation="Horizontal" VerticalOptions="FillAndExpand" BackgroundColor="LightPink">
+                <Label Text="FOR the most wild, yet most homely narrative which I am about to pen, I neither expect nor solicit belief. Mad indeed would I be to expect it, in a case where my very senses reject their own evidence. Yet, mad am I not -- and very surely do I not dream. But to-morrow I die, and to-day I would unburthen my soul. My immediate purpose is to place before the world, plainly, succinctly, and without comment, a series of mere household events. In their consequences, these events have terrified -- have tortured -- have destroyed me. Yet I will not attempt to expound them. To me, they have presented little but Horror -- to many they will seem less terrible than barroques. Hereafter, perhaps, some intellect may be found which will reduce my phantasm to the common-place -- some intellect more calm, more logical, and far less excitable than my own, which will perceive, in the circumstances I detail with awe, nothing more than an ordinary succession of very natural causes and effects." >
+                </Label>
+                <!-- More Label objects go here -->
+            </ScrollView>
+            <!-- </yummy:PancakeView> -->
+            </Grid>
+        <!--<Grid x:Name="PlayerLifeSwipeView" Grid.Row="0" Grid.Column="0">-->
+           <!-- <yummy:PancakeView x:Name="CustomMainContent" CornerRadius="30,30,30,30">-->
+            <Grid x:Name="CustomMainContent" ColumnSpacing="0" RowSpacing="0">
+                <!-- x:Name="PlayerLifeGrid"-->
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -46,6 +58,7 @@
                         Opacity="0">
                         <BoxView.GestureRecognizers>
                             <TapGestureRecognizer x:Name="DecrementTapGestureRecognizer"/>
+                            <PanGestureRecognizer PanUpdated="OnPanUpdated" />
                         </BoxView.GestureRecognizers>
                     </BoxView>
                     <BoxView
@@ -56,10 +69,21 @@
                         Opacity="0">
                         <BoxView.GestureRecognizers>
                             <TapGestureRecognizer x:Name="IncrementTapGestureRecognizer"/>
+                    <PanGestureRecognizer PanUpdated="OnPanUpdated" />
                         </BoxView.GestureRecognizers>
                     </BoxView>
                 </Grid>
-            </yummy:PancakeView>
-        </SwipeView>
-    </ContentView.Content>
+          <!--  </yummy:PancakeView>-->
+            </Grid>
+     <!--   </Grid> -->
+        <!--<SwipeView x:Name="PlayerLifeSwipeView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <SwipeView.TopItems>
+                <SwipeItems x:Name="MySwipeItems" Mode="Reveal" SwipeBehaviorOnInvoked="RemainOpen">
+                    <SwipeItemView x:Name="PlayerLifeSwipeItemView">-->
+
+        <!--     </SwipeItemView>
+                </SwipeItems>
+            </SwipeView.TopItems>
+            
+        </SwipeView>-->
 </ContentView>

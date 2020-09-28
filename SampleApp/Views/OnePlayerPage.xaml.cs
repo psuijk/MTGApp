@@ -19,7 +19,7 @@ namespace SampleApp.Views
             BindingContext = new OnePlayerPageViewModel();
         }
 
-        protected override void OnAppearing()
+       /* protected override void OnAppearing()
         {
             Player1LifeView.BindingContext = BindingContext;
             Player1LifeView.SetOrientation(0);
@@ -27,6 +27,6 @@ namespace SampleApp.Views
             Player1LifeView.SetLabelBinding("LifeTotalP1");
             Player1LifeView.SetIncrementBinding("IncrementValCommand");
             Player1LifeView.SetDecrementBinding("DecrementValCommand");
-        }
+        }*/
     }
 }
