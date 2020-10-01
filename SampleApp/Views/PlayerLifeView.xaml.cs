@@ -34,10 +34,6 @@ namespace SampleApp.Views
 
         void OnPanUpdated(object sender, PanUpdatedEventArgs e)
         {
-            if (orientation == 180)
-            {
-                Console.WriteLine("1 : " + e.TotalY);
-            }
             // On Android, when the view element that a PanGesture lives on
             // moves while panning, it produces a jitter. The following 
             // checks if the Device is an Android and adjusts the EventArgs
@@ -52,16 +48,12 @@ namespace SampleApp.Views
                 e = new PanUpdatedEventArgs(e.StatusType, e.GestureId, TotalX_Modified, TotalY_Modified);
             }
 
-            if (orientation == 180)
-            {
-                Console.WriteLine("2 : " + e.TotalY);
-            }
-
             switch (e.StatusType)
             {
                 case GestureStatus.Running:
                     if (!_isFlyoutOpen)
                     {
+                        //check for swipe up relative to orientation
                         if (orientation == 0 && e.TotalY > 0)
                             CustomMainContent.TranslationY = e.TotalY;
                         else if (orientation == 180 && e.TotalY < 0)
@@ -73,6 +65,7 @@ namespace SampleApp.Views
                     }
                     else if (_isFlyoutOpen)
                     {
+                        //check for swipe down relative to orientation
                         if (orientation == 0 && CustomMainContent.TranslationY > 0)
                             CustomMainContent.TranslationY = Math.Max(e.TotalY, 0);
                         else if (orientation == 180 && CustomMainContent.TranslationY < 0)
@@ -85,10 +78,9 @@ namespace SampleApp.Views
                     break;
 
                 case GestureStatus.Completed:
-                    // Check if panned more than some percent threshold (30%, 50%?)
-                    // if so, open fully
-                    //if not, close back down
-                    // Store the translation applied during the pan
+                    // Check if panned more than panThreshold.
+                    // If so, open fully.  If not, close back down.
+                    // Store the translation applied during the pan.
                     if (!_isFlyoutOpen)
                     {
                         if (orientation == 0)
@@ -142,7 +134,6 @@ namespace SampleApp.Views
                     }
                     else if (_isFlyoutOpen)
                     {
-                        Console.WriteLine("FL  + h" + _height + " trY" + CustomMainContent.TranslationY + " e:" + e.TotalY + " y:" + y + " << " + _height * panThreshold + " ;; " + (_height * behindViewSizeRatio));
                         if (orientation == 0)
                         {
                             if (y - CustomMainContent.TranslationY > (_height * panThreshold))
@@ -199,23 +190,9 @@ namespace SampleApp.Views
             }
         }
 
-        /*private double orientPanValue(PanUpdatedEventArgs e)
-        {
-            switch (orientation)
-            {
-                case 90:
-                    return 0;
-                case 180:
-                    return -e.TotalY;
-                case -90:
-                    return 0;
-            }
-            return e.TotalY; // orientation == 0 or error handling
-        }*/
-
         public void SetTopColor(Color c)
         {
-            CustomMainContent.BackgroundColor = c;//PlayerLifeSwipeView.BackgroundColor = c;
+            CustomMainContent.BackgroundColor = c;
         }
 
         public void SetLabelBinding(String name)
@@ -241,31 +218,14 @@ namespace SampleApp.Views
          * 
          * My workaround is to make the PlayerLifeView contain a 2x2 grid, and if an orientation
          * is changed by 90 degrees, transpose the grid rows/columns, so the sizing remains fixed
-         * but the orientation is changed "manually". For 180 degree rotations, I cannot get the 
-         * TapGestureRecognizer command to fire inside of a SwipeView with SwipeView.BottomItems
-         * so instead I use Rotation=180 on the whole SwipeView (thankfully here there is no
-         * sizing issue)
+         * but the orientation is changed "manually". For 180 degree rotations, flip row 0 and row 1.
          */
         public void SetOrientation(int degrees)
         {
             orientation = degrees;
-           if (degrees == 0)
-           {  
-                //Set Hidden Swipe View Size 
-             //   PlayerLifeSwipeItemView.HeightRequest = PlayerLifeSwipeView.Height - 15;
-             //   PlayerLifeSwipeItemView.WidthRequest = PlayerLifeSwipeView.Width;
-            }
-            else if (degrees == 90)
+            if (degrees == 90)
             {
-                //Set Hidden Swipe View Size 
-             //   PlayerLifeSwipeItemView.HeightRequest = PlayerLifeSwipeView.Height;
-             //   PlayerLifeSwipeItemView.WidthRequest = PlayerLifeSwipeView.Width - 15;
-
-             //   PlayerLifeSwipeView.RightItems = new SwipeItems(new SwipeItemView[] { PlayerLifeSwipeItemView });
-             //   PlayerLifeSwipeView.TopItems.Remove(PlayerLifeSwipeItemView);
-
                 LifeTotalLabel.Rotation = degrees;
-               // HiddenViewLabel.Rotation = degrees;
 
                 Grid.SetColumn(DecrementBox, 0);
                 Grid.SetColumnSpan(DecrementBox, 1);
@@ -290,24 +250,10 @@ namespace SampleApp.Views
                 Grid.SetColumnSpan(IncrementBox, 2);
                 Grid.SetRow(IncrementBox, 1);
                 Grid.SetRowSpan(IncrementBox, 1);
-
-                //Set Hidden Swipe View Size 
-                //   PlayerLifeSwipeItemView.HeightRequest = PlayerLifeSwipeView.Height - 15;
-                //   PlayerLifeSwipeItemView.WidthRequest = PlayerLifeSwipeView.Width;
-
-                // CustomMainContent.Rotation = 180;//PlayerLifeSwipeView.Rotation = 180;
             }
             else if (degrees == -90)
             {
-                //Set Hidden Swipe View Size
-             //   PlayerLifeSwipeItemView.HeightRequest = PlayerLifeSwipeView.Height;
-             //   PlayerLifeSwipeItemView.WidthRequest = PlayerLifeSwipeView.Width - 15;
-
-             //   PlayerLifeSwipeView.LeftItems = new SwipeItems(new SwipeItemView[] { PlayerLifeSwipeItemView });
-              //  PlayerLifeSwipeView.TopItems.Remove(PlayerLifeSwipeItemView);
-
                 LifeTotalLabel.Rotation = degrees;
-          //      HiddenViewLabel.Rotation = degrees;
 
                 Grid.SetColumn(DecrementBox, 1);
                 Grid.SetColumnSpan(DecrementBox, 1);
