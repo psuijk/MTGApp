@@ -7,17 +7,15 @@ namespace SampleApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PlayerLifeView : ContentView
     {
-        // WHEN HIDDEN VIEW IS OPEN, WE SHOULD DISABLE THE TAP GESTURE SO
-        // A PLAYER DOESN'T ACCIDENTALLY CHANGE THE LIFE TOTAL WHEN 
-        // TRYING TO SWIPE BACK TO THE LIFE TOTAL VIEW!
-
         bool _isFlyoutOpen;
-        //uint _flyoutSpeed = 300;
         double x, y;
         double _height, _width;
         double panThreshold = 0.25;
         double orientation;
-        double behindViewSizeRatio = 0.94;
+        double behindViewSizeRatio = 0.8;
+
+        string IncrementCommand;
+        string DecrementCommand;
 
         public PlayerLifeView()
         {
@@ -30,6 +28,22 @@ namespace SampleApp.Views
             base.OnSizeAllocated(width, height);
             _height = height;
             _width = width;
+        }
+
+        private void setFlyoutOpen()
+        {
+            _isFlyoutOpen = true;
+            //Disable life increment/decrement gestures
+            RemoveIncrementBinding();
+            RemoveDecrementBinding();
+        }
+
+        private void setFlyoutClosed()
+        {
+            _isFlyoutOpen = false;
+            //Enable life increment/decrement gestures
+            SetIncrementBinding(IncrementCommand);
+            SetDecrementBinding(DecrementCommand);
         }
 
         void OnPanUpdated(object sender, PanUpdatedEventArgs e)
@@ -88,7 +102,7 @@ namespace SampleApp.Views
                             if (CustomMainContent.TranslationY > (_height * panThreshold))
                             {
                                 CustomMainContent.TranslationY = y + (_height * behindViewSizeRatio);
-                                _isFlyoutOpen = true;
+                                setFlyoutOpen();
                             }
                             else if (CustomMainContent.TranslationY < (_height * panThreshold))
                             {
@@ -100,7 +114,7 @@ namespace SampleApp.Views
                             if (CustomMainContent.TranslationY < -(_height * panThreshold))
                             {
                                 CustomMainContent.TranslationY = y - (_height * behindViewSizeRatio);
-                                _isFlyoutOpen = true;
+                                setFlyoutOpen();
                             }
                             else if (CustomMainContent.TranslationY < (_height * panThreshold))
                             {
@@ -112,7 +126,7 @@ namespace SampleApp.Views
                             if (CustomMainContent.TranslationX < -(_width * panThreshold))
                             {
                                 CustomMainContent.TranslationX = x - (_width * behindViewSizeRatio);
-                                _isFlyoutOpen = true;
+                                setFlyoutOpen();
                             }
                             else if (CustomMainContent.TranslationX < (_width * panThreshold))
                             {
@@ -124,7 +138,7 @@ namespace SampleApp.Views
                             if (CustomMainContent.TranslationX > (_width * panThreshold))
                             {
                                 CustomMainContent.TranslationX = x + (_width * behindViewSizeRatio);
-                                _isFlyoutOpen = true;
+                                setFlyoutOpen();
                             }
                             else if (CustomMainContent.TranslationX < (_width * panThreshold))
                             {
@@ -139,7 +153,7 @@ namespace SampleApp.Views
                             if (y - CustomMainContent.TranslationY > (_height * panThreshold))
                             {
                                 CustomMainContent.TranslationY = y - (_height * behindViewSizeRatio);
-                                _isFlyoutOpen = false;
+                                setFlyoutClosed();
                             }
                             else if (y - CustomMainContent.TranslationY <= (_height * panThreshold))
                             {
@@ -151,7 +165,7 @@ namespace SampleApp.Views
                             if (- y + CustomMainContent.TranslationY > (_height * panThreshold))
                             {
                                 CustomMainContent.TranslationY = y + (_height * behindViewSizeRatio);
-                                _isFlyoutOpen = false;
+                                setFlyoutClosed();
                             }
                             else if (- y + CustomMainContent.TranslationY <= (_height * panThreshold))
                             {
@@ -163,7 +177,7 @@ namespace SampleApp.Views
                             if (-x + CustomMainContent.TranslationX > (_width * panThreshold))
                             {
                                 CustomMainContent.TranslationX = x + (_width * behindViewSizeRatio);
-                                _isFlyoutOpen = false;
+                                setFlyoutClosed();
                             }
                             else if (-x + CustomMainContent.TranslationX <= (_width * panThreshold))
                             {
@@ -175,7 +189,7 @@ namespace SampleApp.Views
                             if (x - CustomMainContent.TranslationX > (_width * panThreshold))
                             {
                                 CustomMainContent.TranslationX = x - (_width * behindViewSizeRatio);
-                                _isFlyoutOpen = false;
+                                setFlyoutClosed();
                             }
                             else if (x - CustomMainContent.TranslationX <= (_width * panThreshold))
                             {
@@ -202,12 +216,26 @@ namespace SampleApp.Views
 
         public void SetIncrementBinding(String name)
         {
+            IncrementCommand = name;
             IncrementTapGestureRecognizer.SetBinding(TapGestureRecognizer.CommandProperty, name);
         }
+
         public void SetDecrementBinding(String name)
         {
+            DecrementCommand = name;
             DecrementTapGestureRecognizer.SetBinding(TapGestureRecognizer.CommandProperty, name);
         }
+
+        private void RemoveIncrementBinding()
+        {
+            IncrementTapGestureRecognizer.ClearValue(TapGestureRecognizer.CommandProperty);
+        }
+
+        private void RemoveDecrementBinding()
+        {
+            DecrementTapGestureRecognizer.ClearValue(TapGestureRecognizer.CommandProperty);
+        }
+
         /*
          * The ideal solution would be to use the Rotation attribute to rotate the player life view,
          * but unfortunately the sizing (height/width) of an object within a grid is determined
